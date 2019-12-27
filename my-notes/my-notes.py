@@ -6,6 +6,7 @@ python toturial: https://docs.python.org/3/tutorial/index.html
 
 12/25/2019
 
+***value and their operators:
 
 in 判断是否包含
 在 Python 程序中可以用 # 符号标示注释语句
@@ -31,8 +32,8 @@ list: []
 针对list的操作：与strings相同
 list比较大小的原则：list内逐一元素比较，一旦决出胜负马上停止
 
-每个变量或者常量，除了它们的值之外，同时还相当于有一个对应的布尔值。
-无论数据的类型是什么，被操作符操作的总是该数据的值，及其相应的布尔值。
+每个变量或者常量，除了它们的值(value)之外，同时还相当于有一个对应的布尔值。
+无论数据的类型是什么，被操作符操作的总是该数据的值(value)，及其相应的布尔值。
 
 操作符：
     值运算
@@ -50,6 +51,49 @@ Python 的内建函数：https://docs.python.org/3/library/functions.html
 Python 的标准数据类型：https://docs.python.org/3/library/stdtypes.html
 另外，其实所有的操作符，在 Python 内部也是调用函数完成的……
 https://docs.python.org/3.7/library/operator.html
+
+12/26/2019
+
+***control flow:
+    
+if语句： if, elif, else
+range(a,b,step)范围包a不包b
+
+绝大多数编程语言中，loop分两种：
+    collection controlled loop: 
+        for ... in ...
+    condition controlled loop: 
+        while ...:
+            ...
+
+与loop相关的语句还有：
+    continue：忽略其后的语句，开始下一次循环
+    break：结束并跳出目前的循环，执行之后的语句
+    pass：什么都不干，给写程序的人占位用
+
+for语句可以附加一个else，在没有发生break的情况下执行：
+    for ...:
+        if ...:
+            break
+    else:
+        ...
+    
+for语句适合处理sequence type的迭代，while语句更灵活。
+
+***functions:
+
+f-string: f'...{...}...{...}'
+    f-string 中用花括号 {} 括起来的部分是表达式，最终转换成字符串的时候，那些表达式的值（而不是变量或者表达式本身）会被插入相应的位置
+    
+print() 这个函数是可以往文件里写数据的，只要指定 file 这个参数为一个已经打开的文件对象就可以了
+
+function的参数有两种：
+    positional arguments
+    keyword arguments
+    
+
+
+
 
 
 
