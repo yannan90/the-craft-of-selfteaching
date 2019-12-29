@@ -8,7 +8,6 @@ python toturial: https://docs.python.org/3/tutorial/index.html
 
 ***value and their operators:
 
-in 判断是否包含
 在 Python 程序中可以用 # 符号标示注释语句
 (1,1000)含左侧1但不含右侧1000
 x+=1 即 x=x+1
@@ -82,19 +81,92 @@ for语句适合处理sequence type的迭代，while语句更灵活。
 
 ***functions:
 
-f-string: f'...{...}...{...}'
-    f-string 中用花括号 {} 括起来的部分是表达式，最终转换成字符串的时候，那些表达式的值（而不是变量或者表达式本身）会被插入相应的位置
-    
 print() 这个函数是可以往文件里写数据的，只要指定 file 这个参数为一个已经打开的文件对象就可以了
 
 function的参数有两种：
-    positional arguments
-    keyword arguments
+    keyword arguments (kwarg): 在函数定义中，带有“=”，已为其设置好默认值的参数
+    positional arguments (arg): 其他参数
+
+为了学会使用 Python，你以后最常访问的页面一定是这个：
+    https://docs.python.org/3/library/index.html
+而最早反复阅读查询的页面肯定是其中的这两个：
+    https://docs.python.org/3/library/functions.html
+    https://docs.python.org/3/library/stdtypes.html
+        
+***strings:
     
+标示一个字符串，有 4 种方式，用单引号、用双引号，用三个单引号或者三个双引号
 
+字符串相关的built-in function：
+    ord(): 把一个字符转换成对应的unicode
+    chr(): 把一个整数（unicode）转换成其对应的字符   
+    int(): 把字符串转换成整数。注：被转换对象为字符串时，字符串内容只能是整数，否则会报错
+    float(): 转换为浮点数
+    str(): 转换为字符串
+    len(): 求字符串长度
+    print()
+    input()
 
+转译符号\:
+    raw字符 \' 对应的presentation字符 '
+    raw字符 \" 对应的presentation字符 "
+    raw字符 \n 对应presentation字符 回车
+    raw字符 \t 对应presentation字符 TAB
+    
+字符串可以用空格 ' ' 或者 + 拼接
+in 或者 not in 判断是否包含
 
+字符串属于有序容器，可以使用 [] 作为 “索引操作符”提取字符：
+    s[index] —— 返回索引值为 index 的那个字符
+    s[start:] —— 返回从索引值为 start 开始一直到字符串末尾的所有字符
+    s[start:stop] —— 返回从索引值为 start 开始一直到索引值为 stop 的那个字符之前的所有字符
+    s[:stop] —— 返回从字符串开头一直到索引值为 stop 的那个字符之前的所有字符
+    s[start:stop:step] —— 返回从索引值为 start 开始一直到索引值为 stop 的那个字符之前的，以 step 为步长提取的所有字符
+    
+处理字符串的Method:
+    调用 str 类的 Methods 是使用 . 这个符号，比如：
+    'Python'.upper()    
+    str.upper() 改成大写
+    str.lower() 改成小写
+    str.casefold() 改成小写
+    str.capitalize() 句子首字母大写
+    str.title() 句子中每个单词首字母大写
+    str.swapcase() 大小写替换
+    str.count(sub [,start=0[, end=len(str)]]) 搜索子字符串出现的次数
+    str.find() 显示字符串第一次出现的位置，没找到返回-1
+    str.rfind() 显示字符串最后出现的位置，没找到返回-1
+    str.index() 显示字符串最后出现的位置，没找到报错
+    str.startswith() 判断字符串是否以某个子字符串开始
+    str.endswith() 判断字符串是否以某个子字符串结束
+    str.replace(old, new[, count]) 用new字符串替代old字符串， 替换count个
+    str.strip([chars]) 去掉字符串首尾相应的字符
+    str.strip() 去掉字符串首尾所有空白，包括空格、TAB、换行符等等
+    str.lstrip([chars]) 去掉字符串左侧相应的字符
+    str.rstrip([chars]) 去掉字符串右侧相应的字符
+    拆分字符串，返回列表：str.splitlines()；str.split()；str.partition()
+    str.join(_iterable_) 拼接字符串：
+    str.center(width[, fillchar]) 字符串居中排版， fillchar只接收单个字符
+    str.rjust(width[, fillchar]) 字符串右对齐
+    str.ljust(width[, fillchar]) 字符串左对齐
+    str.zfill(int) 将字符串转换成左侧由 0 填充的指定长度字符串
+    
+将字符串进行格式化的Method:
+    str.format(*args, **kwargs)
+    f-string
+        f'...{...}...{...}'
+        f-string 中用花括号 {} 括起来的部分是表达式，最终转换成字符串的时候，那些表达式的值（而不是变量或者表达式本身）会被插入相应的位置
+        
+字符串还有一系列的 Methods，返回的是布尔值，用来判断字符串的构成属性。
 
+***numbers:
+    
+数值相关的built-in function：
+    abs(n) 函数返回参数 n 的绝对值；
+    int(n) 用来将浮点数字 n 转换成整数；
+    float(n) 用来将整数 n 转换成浮点数字；
+    divmod(n, m) 用来计算 n 除以 m，返回两个整数，一个是商，另外一个是余；
+    pow(n, m) 用来做乘方运算，返回 n 的 m 次方；
+    round(n) 返回离浮点数字 n 最近的那个整数。
 
 
 
