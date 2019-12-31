@@ -169,4 +169,29 @@ in 或者 not in 判断是否包含
     round(n) 返回离浮点数字 n 最近的那个整数。
 
 
+12/29/2019
 
+***containers:
+
+Mutable: list, dictionary, set
+Immutable: string, range(), Tuple, frozen set
+    
+List comprehension 可以嵌套使用 for，甚至可以加上条件 if，例如：
+    a_list=[2**x for x in range(8)]
+    b_list=[x for x in a_list if x%2==0]
+    
+List 的操作符：
+    拼接：+ （不能用空格）
+    复制：*
+    逻辑运算：in 和 not in，<、<=、>、>=、!=、==
+        两个列表也和两个字符串一样，可以被比较，即，可以进行逻辑运算；比较方式也跟字符串一样，从两个列表各自的第一个元素开始逐个比较，“一旦决出胜负马上停止”
+        
+根据索引提取list元素：a_list[start:stop:step] —— list是可变序列，所以，不仅可以提取，还可以删除，甚至替换
+根据索引删除list元素：del a_list[start:stop:step]
+根据索引替换list元素：a_list[start:stop:step]=t —— len(t) = len([start:stop:step]) 必须为真
+
+List的built-in fuction：
+    len()
+    max()
+    min()
+    
