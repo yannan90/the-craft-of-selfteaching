@@ -176,6 +176,8 @@ in 或者 not in 判断是否包含
 Mutable: list, dictionary, set
 Immutable: string, range(), Tuple, frozen set
     
+*List:
+    
 List comprehension 可以嵌套使用 for，甚至可以加上条件 if，例如：
     a_list=[2**x for x in range(8)]
     b_list=[x for x in a_list if x%2==0]
@@ -190,8 +192,77 @@ List 的操作符：
 根据索引删除list元素：del a_list[start:stop:step]
 根据索引替换list元素：a_list[start:stop:step]=t —— len(t) = len([start:stop:step]) 必须为真
 
+L=list(s) 把字符串s的每个字符生成一个list L
+
 List的built-in fuction：
     len()
     max()
     min()
+    del a_list[2] 删去a_list索引2的元素
+    
+List（mutable）的Method:
+    a.sort(reverse=False) —— 反向排序的话把reverse参数定为True
+    a.append() 在末尾追加一个元素
+    a.clear() 清空list
+    a.copy() 拷贝一个list, 之后对一个拷贝文件操作，不会更改原件
+    a.insert(1,'example') 在索引1的位置插入元素'example'
+    a.pop([1]) 删除a中索引为1的元素，并返回该元素的值
+    a.remove('example') 把a中'example'这个元素删掉，如果有多个，只删第一个
+    
+*Tuple:
+    
+Tuple是immutable，所以，你没办法从里面删除元素。你可以在末尾追加元素。所以，严格意义上，对元组来讲，“不可变” 的意思是说，“当前已有部分不可变”……
+
+a=(1,) —— 创建单个元素的Tuple，无论是否使用圆括号，在那唯一的元素后面一定要补上一个逗号 ,
+
+在将来需要更改的时候，创建 List ；在将来不需要更改的时候，创建 Tuple。其次，从计算机的角度来看，Tuple 相对于 List 占用更小的内存。
+    a.__sizeof__() 查看各种container的大小
+
+*Set:
+
+Set不包含重复元素，它是无序的，另外它分为set(mutable), frozen set(immutable)
+
+创建空集合的时候，必须用 set()，而不能用 {}。用{}创建的是一个dictionary
+
+set(s) —— 将序列数据转换（Casting）为set。转换后，返回的是一个已去重的set。
+
+Set的built-in fuction：
+    len()
+    max()
+    min()
+    
+Set的操作：
+    并集：| 或 a.union(b)
+    交集：& 或 a.intersection(b)
+    差集：- 或 a.difference(b)
+    对称差集：^ 或 symmetric_difference(b)
+    
+Set的逻辑运算：
+    set == other
+    set !== other
+    isdisjoint(other) set与other非重合
+    issubset(other) set是other的子集
+    set < other set是other的真子集
+    issuperset(other) set是other的超集
+    set > other set是other的真超集
+    
+Set的Method：
+    a.add(elem)
+    a.remove(elem) 从集合中删除 elem；如果集合中不包含该 elem，会产生 KeyError 错误
+    a.discard(elem) 如果该元素存在于集合中，删除它
+    a.pop(elem) 从集合中删除 elem，并返回 elem 的值，针对空集合做此操作会产生 KeyError 错误
+    a.clear() 清空set
+    a.update(*others) 更新set,加入others中的所有元素,相当于set |= other | ...
+    a.intersection_update(*others) 更新 set, 保留同时存在于 set 和所有 others 之中的元素,相当于set &= other & ...
+    a.difference_update(*others) 更新 set, 删除所有在 others 中存在的元素,相当于set -= other | ...
+    a.symmetric_difference_update(other) 更新 set, 只保留存在于 set 或 other 中的元素，但不保留同时存在于 set 和 other 中的元素,相当于 set ^= other
+    
+*Frozen Set： Frozen Set 之于 Set，正如 Tuple 之于 List，前者是Immutable，后者是Mutable，无非是为了节省内存使用而设计的类别。
+    有空去看看这个链接就可以了： https://docs.python.org/3/library/stdtypes.html#frozenset
+        
+*Dictionary：
+
+在同一个字典里，key 都是唯一的。当创建字典的时候，如果其中有重复的 key 的话，就跟 Set 那样会 “自动去重” —— 保留的是众多重复的 key 中的最后一个 key:value_（或者说，最后一个 _key:value “之前那个 key 的 value 被更新了”）。字典这个数据类型之所以叫做 Map（映射），是因为字典里的 key 都映射且只映射一个对应的 _value_。
+        
+Dictionary的Method：
     
