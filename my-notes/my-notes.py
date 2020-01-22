@@ -263,6 +263,28 @@ Set的Method：
 *Dictionary：
 
 在同一个字典里，key 都是唯一的。当创建字典的时候，如果其中有重复的 key 的话，就跟 Set 那样会 “自动去重” —— 保留的是众多重复的 key 中的最后一个 key:value_（或者说，最后一个 _key:value “之前那个 key 的 value 被更新了”）。字典这个数据类型之所以叫做 Map（映射），是因为字典里的 key 都映射且只映射一个对应的 _value_。
-        
-Dictionary的Method：
     
+Dictionary的内建函数：
+    del a['ann'] 删掉a中key为'ann'的元素
+    len()
+    max()
+    min()
+    list() 转换成 list
+    tuple() 转换成tuple
+    set() 转换成set
+    sorted() 转换成list，并排序
+    
+Dictionary的逻辑运算：
+    in 和 not in
+
+Dictionary的Method：
+    a.items()
+    a.keys()
+    a.values()
+    a.update(b) 把b的元素添加到a
+    a.clear() 清空a
+    b=a.copy() 复制a给b，之后修改b时a不会变化
+    b=a.popitem() 删除并返回字典中的最后一对键和值
+    b=a.pop(key[,default]) 从dict中删除此元素，并返回此元素的value。(如果dict中无此元素则只返回default)
+    b=a.get(key,default=None) 返回dict中此元素的value。(如果dict中无此元素则只返回default)
+    b=a.setdefault(key,default=None) 返回dict中此元素的value。(如果dict中无此元素则添加元素,只返回default)
