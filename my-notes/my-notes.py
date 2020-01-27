@@ -199,6 +199,8 @@ List的built-in fuction：
     max()
     min()
     del a_list[2] 删去a_list索引2的元素
+    sorted()
+    reversed()
     
 List（mutable）的Method:
     a.sort(reverse=False) —— 反向排序的话把reverse参数定为True
@@ -264,15 +266,15 @@ Set的Method：
 
 在同一个字典里，key 都是唯一的。当创建字典的时候，如果其中有重复的 key 的话，就跟 Set 那样会 “自动去重” —— 保留的是众多重复的 key 中的最后一个 key:value_（或者说，最后一个 _key:value “之前那个 key 的 value 被更新了”）。字典这个数据类型之所以叫做 Map（映射），是因为字典里的 key 都映射且只映射一个对应的 _value_。
     
-Dictionary的内建函数：
+Dictionary的built-in function：
     del a['ann'] 删掉a中key为'ann'的元素
     len()
     max()
     min()
-    list() 转换成 list
-    tuple() 转换成tuple
-    set() 转换成set
-    sorted() 转换成list，并排序
+    list() 只保留dict的key,转换成 list
+    tuple() 只保留dict的key,转换成tuple
+    set() 只保留dict的key,转换成set
+    sorted() 只保留dict的key,转换成list,并排序
     
 Dictionary的逻辑运算：
     in 和 not in
@@ -288,3 +290,9 @@ Dictionary的Method：
     b=a.pop(key[,default]) 从dict中删除此元素，并返回此元素的value。(如果dict中无此元素则只返回default)
     b=a.get(key,default=None) 返回dict中此元素的value。(如果dict中无此元素则只返回default)
     b=a.setdefault(key,default=None) 返回dict中此元素的value。(如果dict中无此元素则添加元素,只返回default)
+    
+迭代各种容器s中的元素：for i in s:
+迭代的同时获取索引：for i,c in enumerate(s):
+同时迭代多个容器(多个容器中的元素数量最好相同)： for a,b,... in zip(s1,s2,...)
+迭代dict的key： for key in s:
+迭代dict的key与value: for key,value in s:
